@@ -5,24 +5,13 @@ import './Modal.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function InputModal() {
-  const { setNewExpense } = useContext(ExpenseContext);
+  const { expenses, setExpenses } = useContext(ExpenseContext);
   const [date, setDate] = useState('');
   const [amount, setAmount] = useState(0);
   const [vendor, setVendor] = useState('');
   const [payment, setPayment] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
-
-  const handleInputs = () => {
-    setNewExpense({
-      date,
-      amount: parseFloat(amount),
-      vendor,
-      payment,
-      description,
-      category,
-    });
-  };
 
   return (
     <div className='modal fade' id='inputModal'>
@@ -143,7 +132,16 @@ function InputModal() {
               className='btn btn-primary'
               data-bs-toggle='modal'
               data-bs-target='#inputModal'
-              onClick={handleInputs}>
+              onClick={() =>
+                setExpenses(...expenses, {
+                  date,
+                  amount: parseFloat(amount),
+                  vendor,
+                  payment,
+                  description,
+                  category,
+                })
+              }>
               Save
             </button>
           </div>

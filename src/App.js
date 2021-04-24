@@ -8,14 +8,7 @@ import InputModal from './Components/InputModal';
 import { ExpenseContext } from './contexts/ExpenseContext';
 
 function App() {
-  const [newExpense, setNewExpense] = useState({
-    date: '',
-    amount: '',
-    category: '',
-    payment: '',
-    vendor: '',
-    description: '',
-  });
+  const [expenses, setExpenses] = useState([]);
 
   return (
     <div className='App'>
@@ -28,7 +21,7 @@ function App() {
         </div>
         <DonutChart className='chart' />
       </section>
-      <ExpenseContext.Provider value={{ newExpense, setNewExpense }}>
+      <ExpenseContext.Provider value={{ expenses }}>
         <button
           type='button'
           className='btn btn-primary'
