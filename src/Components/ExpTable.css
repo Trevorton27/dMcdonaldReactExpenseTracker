@@ -1,8 +1,8 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-content: start;
+  justify-content: flex-start;
+  align-content: flex-start;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   color: rgb(55, 72, 126);
