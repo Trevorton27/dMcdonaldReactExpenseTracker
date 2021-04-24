@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, createElement } from 'react';
 import { ExpenseContext } from '../contexts/ExpenseContext';
 import './ExpTable.css';
 
@@ -13,17 +13,16 @@ function ExpTable() {
   const logClick = () => {
     console.log('clicked it');
   };
+
   const createExpenseRow = () => {
-    let newRow = document.querySelector('.table').insertRow(-1);
+    let newRow = document.querySelector('.tableBody').insertRow(-1);
     newRow.innerHTML = `<td>${newExpense.date}</td>
     <td>$ ${newExpense.amount}</td>
     <td>${newExpense.payment}</td>
     <td>${newExpense.category}</td>
     <td>${newExpense.vendor}</td>
     <td>${newExpense.description}</td>
-    <td>
-      <button className='delete' onClick=${logClick}></button>
-    </td>
+    <td>${React.createElement('button', { onClick: logClick }, 'delete')}</td>
     `;
   };
 
@@ -41,12 +40,10 @@ function ExpTable() {
           <th className='table-header'>Category</th>
           <th className='table-header'>Vendor</th>
           <th className='table-header'>Description</th>
-          <th>
-            <button className='delete' onClick={deleteRow}></button>
-          </th>
+          <th className='table-header'>Delete</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody className='tableBody'></tbody>
     </table>
   );
 }
