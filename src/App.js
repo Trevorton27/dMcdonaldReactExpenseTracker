@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import bootstrap from 'bootstrap';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DonutChart from './Components/Donut';
@@ -21,7 +20,7 @@ function App() {
         </div>
         <DonutChart className='chart' />
       </section>
-      <ExpenseContext.Provider value={{ expenses }}>
+      <ExpenseContext.Provider value={{ expenses, setExpenses }}>
         <button
           type='button'
           className='btn btn-primary'
@@ -29,7 +28,7 @@ function App() {
           data-bs-target='#inputModal'>
           New Expense
         </button>
-        <InputModal />
+        <InputModal expenses={expenses} setExpenses={setExpenses} />
         <ExpTable />
       </ExpenseContext.Provider>
     </div>

@@ -3,12 +3,9 @@ import { ExpenseContext } from '../contexts/ExpenseContext';
 import './ExpTable.css';
 
 function ExpTable() {
-  const { expenses } = useContext(ExpenseContext);
+  const { expenses, setExpenses } = useContext(ExpenseContext);
 
-  const deleteRow = r => {
-    let i = r.parentNode.parentNode.rowIndex;
-    document.getElementById('table').deleteRow(i);
-  };
+  let lastID = 0;
 
   return (
     <table className='table .table-responsive table-sm table-borderless table-dark table-hover table-striped '>
@@ -25,15 +22,25 @@ function ExpTable() {
       </thead>
       <tbody>
         {expenses.map(expense => (
-          <tr>
-            <td>${expense.date}</td>
-            <td>$ ${expense.amount}</td>
-            <td>${expense.payment}</td>
-            <td>${expense.category}</td>
-            <td>${expense.vendor}</td>
-            <td>${expense.description}</td>
+          <tr key={lastID}>
+            <td>{expense.date}</td>
+            <td>${expense.amount}</td>
+            <td>{expense.payment}</td>
+            <td>{expense.category}</td>
+            <td>{expense.vendor}</td>
+            <td>{expense.description}</td>
             <td>
-              ${React.createElement('button', { onClick: deleteRow }, 'delete')}
+              {React.createElement(
+                'button',
+                {
+                  id: lastID++,
+                  onClick: e => {
+                    expenses.splice(e.target.id, 1);
+                    setExpenses(expenses => [...expenses]);
+                  },
+                },
+                'delete'
+              )}
             </td>
           </tr>
         ))}
