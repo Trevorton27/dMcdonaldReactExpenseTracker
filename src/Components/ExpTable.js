@@ -33,6 +33,7 @@ function ExpTable() {
               {React.createElement(
                 'button',
                 {
+                  className: 'deleteBtn',
                   id: lastID++,
                   onClick: e => {
                     expenses.splice(e.target.id, 1);

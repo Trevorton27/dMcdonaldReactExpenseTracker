@@ -4,7 +4,8 @@ import bootstrap from 'bootstrap';
 import './Modal.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function InputModal(props) {
+function InputModal() {
+  const { expenses, setExpenses } = useContext(ExpenseContext);
   const [date, setDate] = useState('');
   const [amount, setAmount] = useState(0);
   const [vendor, setVendor] = useState('');
@@ -140,9 +141,7 @@ function InputModal(props) {
               className='btn btn-primary'
               data-bs-toggle='modal'
               data-bs-target='#inputModal'
-              onClick={() =>
-                props.setExpenses([...props.expenses, newExpense])
-              }>
+              onClick={() => setExpenses([...expenses, newExpense])}>
               Save
             </button>
           </div>

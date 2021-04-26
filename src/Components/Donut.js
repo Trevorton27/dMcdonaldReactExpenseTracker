@@ -1,46 +1,72 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ExpenseContext } from '../contexts/ExpenseContext';
 import { Doughnut, defaults } from 'react-chartjs-2';
+import './Donut.css';
 
 defaults.global.legend.position = 'right';
 
-const DonutChart = props => {
+const DonutChart = () => {
+  let categories = {};
+  const { expenses } = useContext(ExpenseContext);
+
+  let rows = expenses.length;
+  for (let i = 0; i < rows; i++) {
+    let c = expenses[i].category;
+    let a = expenses[i].amount;
+    console.log(c);
+    if (!categories[c]) {
+      categories = { ...categories, [c]: a };
+    } else {
+      categories[c] += a;
+    }
+  }
+
+  const labels = [...Object.keys(categories)];
+  const data = [...Object.values(categories)];
   return (
     <>
-      <Doughnut
-        data={{
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-          legend: { display: false },
-          datasets: [
-            {
-              label: '# of Votes',
-              data: [12, 25, 45],
-              backgroundColor: [
-                'rgba(255, 99, 132, 0.8)',
-                'rgba(54, 162, 235, 0.8)',
-                'rgba(255, 206, 86, 0.8)',
-                'rgba(75, 192, 192, 0.8)',
-                'rgba(153, 102, 255, 0.8)',
-                'rgba(255, 159, 64, 0.8)',
-              ],
-              borderColor: 'none',
-              //   [
-              //     'rgba(255, 99, 132, 1)',
-              //     'rgba(54, 162, 235, 1)',
-              //     'rgba(255, 206, 86, 1)',
-              //     'rgba(75, 192, 192, 1)',
-              //     'rgba(153, 102, 255, 1)',
-              //     'rgba(255, 159, 64, 1)',
-              //   ],
-              borderWidth: 1,
+      <div className='chart-container'>
+        <Doughnut
+          data={{
+            labels,
+            datasets: [
+              {
+                data,
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.7)',
+                  'rgba(54, 162, 235, 0.7)',
+                  'rgba(255, 206, 86, 0.7)',
+                  'rgba(75, 192, 192, 0.7)',
+                  'rgba(153, 102, 255, 0.7)',
+                  'rgba(155, 90, 102, 0.7)',
+                  'rgba(74, 122, 255, 0.7)',
+                  'rgba(255, 250, 200, 0.7)',
+                  'rgba(75, 75, 190, 0.7)',
+                  'rgba(100, 200, 55, 0.7)',
+                ],
+                borderColor: 'none',
+                borderWidth: 3,
+              },
+            ],
+          }}
+          options={{
+            maintainAspectRatio: false,
+            fontColor: 'black;',
+            tooltips: {
+              displayColors: false,
             },
-          ],
-        }}
-        // height={90}
-        // width={700}
-        options={{
-          maintainAspectRatio: false,
-        }}
-      />
+            // plugins: {
+            legend: {
+              labels: {
+                fontSize: 16,
+                fontWeight: 'bold',
+                fontColor: 'black',
+              },
+            },
+            // },
+          }}
+        />
+      </div>
     </>
   );
 };

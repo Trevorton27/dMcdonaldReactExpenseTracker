@@ -1,13 +1,17 @@
 .App {
   display: flex;
   flex-direction: column;
-  background-color: darkslategrey;
+  background-color: teal;
   text-align: center;
 }
-.overview {
-  display: flex;
-}
-.btn {
+.btn-primary {
   width: 29%;
   margin: 1.5em 0 1em 0.5em;
+}
+.deleteBtn {
+  border: none;
+  background: transparent;
+  color: white;
+  font-weight: bolder;
+  text-transform: capitalize;
 }

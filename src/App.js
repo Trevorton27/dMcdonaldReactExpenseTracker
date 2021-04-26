@@ -11,16 +11,9 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>React TRKR</h1>
-      <section className='overview'>
-        <div className='totals'>
-          <div className='totals-title'>
-            <h2>Expenses Overview</h2>
-          </div>
-        </div>
-        <DonutChart className='chart' />
-      </section>
       <ExpenseContext.Provider value={{ expenses, setExpenses }}>
+        <h1>React TRKR</h1>
+        <DonutChart className='chart' />
         <button
           type='button'
           className='btn btn-primary'
@@ -28,7 +21,7 @@ function App() {
           data-bs-target='#inputModal'>
           New Expense
         </button>
-        <InputModal expenses={expenses} setExpenses={setExpenses} />
+        <InputModal />
         <ExpTable />
       </ExpenseContext.Provider>
     </div>
