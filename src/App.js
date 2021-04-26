@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './BoostrapReset.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DonutChart from './Components/Donut';
@@ -7,7 +8,16 @@ import InputModal from './Components/InputModal';
 import { ExpenseContext } from './contexts/ExpenseContext';
 
 function App() {
-  const [expenses, setExpenses] = useState([]);
+  const [expenses, setExpenses] = useState([
+    {
+      date: 'Never',
+      amount: 0.01,
+      payment: 'EXAMPLE',
+      category: 'EXAMPLE',
+      vendor: 'Duane',
+      description: 'DELETE ME',
+    },
+  ]);
 
   return (
     <div className='App'>

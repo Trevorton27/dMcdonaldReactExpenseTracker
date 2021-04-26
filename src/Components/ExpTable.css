@@ -1,39 +1,3 @@
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: flex-start;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-  color: rgb(55, 72, 126);
-  padding-inline: 21%;
-  margin-inline: auto;
-}
-h1,
-h2 {
-  color: rgb(255, 255, 255);
-  text-align: center;
-  font-weight: bolder;
-}
-h1 {
-  font-size: 2.4em;
-}
-main {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-legend {
-  font-size: 1.25rem;
-  margin-bottom: 0.35em;
-}
-fieldset {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  border: 4px solid rgb(0, 10, 66);
-  border-radius: 4px;
-}
 input,
 label {
   display: block;
@@ -41,83 +5,45 @@ label {
 }
 label {
   top: 0;
-  font-size: 0.9em;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.75px;
 }
 input {
-  font-size: 0.9em;
+  font-size: 1em;
   box-sizing: border-box;
-  width: 94%;
+  width: 90%;
 }
-.submit {
-  font-size: 1.1rem;
+button.btn.btn-secondary,
+#inputModal > div > div > div.modal-footer > button.btn.btn-primary {
   font-weight: bold;
-  border: none;
-  margin-top: 1.25em;
-}
-.container {
-  margin-block: 5px;
 }
 table {
   border-collapse: collapse;
-  width: 200px;
   height: auto;
   border: 1px solid darkgray;
   box-shadow: 2px 2px 2px 2px rbga(0, 0, 0, 0.35);
-  min-width: 56%;
-  width: auto;
-  margin: 0 auto 0 auto;
+  min-width: 25vw;
 }
 th {
-  font-size: 1.05rem;
-}
-tr {
-  font-weight: normal;
-  font-size: 0.9rem;
-  transition: all 0.2s ease-in;
-  cursor: pointer;
-}
-td {
-  font-size: 0.92em;
-  max-width: 16ch;
-  padding-inline: 2px;
-
-  text-overflow: auto;
-  white-space: wrap;
-  overflow: auto;
-  overflow-wrap: break-word;
-  word-break: normal;
-}
-#dateTemp {
-  font-size: 0.85em;
-  width: 8ch;
-}
-#amountTemp::before {
-  content: '$';
-}
-th {
-  padding: 0.25rem;
-  text-align: center;
-  border-bottom: 2px solid rgb(160, 160, 160);
+  font-size: 1.11em;
 }
 tr:hover {
-  background-color: #cce6f8ea;
-  transform: scale(1.025);
+  background-color: #42a9f3ea;
+  transform: scale(1.015);
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 2px rgba(0, 0, 0, 0.2);
 }
-button:hover {
-  background-color: #ffffffea;
-  transform: scale(1.025);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
-  color: tomato;
+.deleteBtn {
   border: none;
+  background: transparent;
+  color: white;
+  font-weight: bolder;
+  text-transform: capitalize;
 }
-img {
-  height: 32px;
-  width: 32px;
-}
-.delete {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-left: auto;
+.deleteBtn:hover {
+  border: none;
+  background: transparent;
+  color: tomato;
+  font-weight: bolder;
+  text-transform: uppercase;
 }

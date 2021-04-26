@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { ExpenseContext } from '../contexts/ExpenseContext';
 import { Doughnut, defaults } from 'react-chartjs-2';
-import './Donut.css';
 
 defaults.global.legend.position = 'right';
 

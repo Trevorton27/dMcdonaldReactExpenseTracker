@@ -8,7 +8,10 @@ function ExpTable() {
   let lastID = 0;
 
   return (
-    <table className='table .table-responsive table-sm table-borderless table-dark table-hover table-striped '>
+    <table
+      className='table .table-responsive table-sm table-borderless table-dark table-hover table-striped '
+      // contentEditable='true'
+    >
       <thead className='.thead-dark '>
         <tr>
           <th className='table-header'>Date</th>

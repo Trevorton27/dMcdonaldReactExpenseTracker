@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { ExpenseContext } from '../contexts/ExpenseContext';
 import bootstrap from 'bootstrap';
-import './Modal.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function InputModal() {

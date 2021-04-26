@@ -1,17 +1,46 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  color: rgb(9, 40, 245);
+  width: 70vw;
+  padding: 1vh 1vw 0 1vw;
+}
 .App {
   display: flex;
   flex-direction: column;
-  background-color: teal;
+  background-color: rgba(10, 60, 250, 0.65);
   text-align: center;
+  margin: 0 auto;
+  border-radius: 0.25em;
 }
-.btn-primary {
-  width: 29%;
-  margin: 1.5em 0 1em 0.5em;
-}
-.deleteBtn {
-  border: none;
-  background: transparent;
-  color: white;
+h1 {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.78);
+  text-align: center;
   font-weight: bolder;
-  text-transform: capitalize;
+  border-radius: 3px;
+  padding-block: 0.45em;
+}
+#root > div > button {
+  width: 30%;
+  margin: 1.5em 0 1em 0.5em;
+  background-color: rgb(88, 78, 146);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#root > div > button:hover {
+  background-color: rgb(31, 5, 180);
+  font-size: 1.215em;
+  font-weight: bolder;
+}
+.chart-container {
+  position: relative;
+  height: 27.5vh;
+  width: 40vw;
+  margin: 0.5em 0 0.25em 0;
+  align-self: center;
 }
