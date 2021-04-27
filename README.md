@@ -1,13 +1,12 @@
 # React Expense Tracker
 
-Old school JS snake game! Don't eat your tail!!!
+A financial traking app build with React js, Bootstrap 5, Adobe XD and Heroku.
 
 <img align="right" src="screenshot.png" height="400">
 try <a href="https://expense-tracker-react-dm.herokuapp.com/"> React TRKR on Heroku  </a>!
 
 ## Summary
 
-A financial traking app build with React js, Bootstrap 5, Adobe XD and Heroku.
 This app was an ejoyable build. I used this platform to inform my React knowledge. In the process I added several npm packages including Bootstrap 5, Chart.js, and poppper. This app pushed me into learning the react context api. I chose context over redux to keep the code as lean as possible.
 
 #### Wish List
