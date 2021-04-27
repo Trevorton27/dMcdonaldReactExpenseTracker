@@ -3,7 +3,7 @@
 A financial traking app build with React js, Bootstrap 5, Adobe XD and Heroku.
 
 <img align="right" src="screenshot.png" height="400">
-try <a href="https://expense-tracker-react-dm.herokuapp.com/"> React TRKR on Heroku  </a>!
+Try <a href="https://expense-tracker-react-dm.herokuapp.com/"> React TRKR on Heroku  </a>!
 
 ## Summary
 
