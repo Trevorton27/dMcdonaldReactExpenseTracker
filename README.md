@@ -9,6 +9,17 @@ try <a href="https://expense-tracker-react-dm.herokuapp.com/"> React TRKR on Her
 
 This app was an ejoyable build. I used this platform to inform my React knowledge. In the process I added several npm packages including Bootstrap 5, Chart.js, and poppper. This app pushed me into learning the react context api. I chose context over redux to keep the code as lean as possible.
 
+## Features
+
+<ul>
+  <li> Responsive UI
+  <li> Clean props context handling
+  <li> Component updates on input
+  <li> Responsive modal input window
+  <li> Hover transitions and animations
+</ul>
+
+
 #### Wish List
 
 <ul>
