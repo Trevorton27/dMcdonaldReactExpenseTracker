@@ -41,27 +41,27 @@ const DonutChart = () => {
                   'rgba(74, 122, 255, 0.7)',
                   'rgba(255, 250, 200, 0.7)',
                   'rgba(75, 75, 190, 0.7)',
-                  'rgba(100, 200, 55, 0.7)',
+                  'rgba(100, 200, 55, 0.7)'
                 ],
                 borderColor: 'none',
-                borderWidth: 3,
-              },
-            ],
+                borderWidth: 3
+              }
+            ]
           }}
           options={{
             maintainAspectRatio: false,
             fontColor: 'black;',
             tooltips: {
-              displayColors: false,
+              displayColors: false
             },
             // plugins: {
             legend: {
               labels: {
                 fontSize: 16,
                 fontWeight: 'bold',
-                fontColor: 'black',
-              },
-            },
+                fontColor: 'black'
+              }
+            }
             // },
           }}
         />

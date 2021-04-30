@@ -9,13 +9,15 @@ body {
   width: 70vw;
   padding: 1vh 1vw 0 1vw;
 }
+
 .App {
   display: flex;
   flex-direction: column;
   background-color: rgba(10, 60, 250, 0.65);
-  text-align: center;
-  margin: 0 auto;
+  width: 50%;
+  margin-left: 45%;
   border-radius: 0.25em;
+  width: 60%;
 }
 h1 {
   color: rgb(255, 255, 255);
@@ -38,6 +40,7 @@ h1 {
   font-weight: bolder;
 }
 .chart-container {
+  text-align: center;
   position: relative;
   height: 27.5vh;
   width: 40vw;

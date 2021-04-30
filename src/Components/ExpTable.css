@@ -35,10 +35,11 @@ tr:hover {
 }
 .deleteBtn {
   border: none;
-  background: transparent;
+  background: #bc0707;
   color: white;
   font-weight: bolder;
-  text-transform: capitalize;
+  border-radius: 5px;
+  text-align: center;
 }
 .deleteBtn:hover {
   border: none;

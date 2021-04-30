@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './BoostrapReset.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,12 +15,21 @@ function App() {
       payment: 'EXAMPLE',
       category: 'EXAMPLE',
       vendor: 'Duane',
-      description: 'DELETE ME',
-    },
+      description: 'DELETE ME'
+    }
   ]);
 
+  useEffect(() => {
+    const savedExpenses = JSON.parse(localStorage.getItem('expenses')) || [];
+    setExpenses(savedExpenses);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('expenses', JSON.stringify(expenses));
+  }, [expenses]);
+
   return (
-    <div className='App'>
+    <div className='align-items-center App'>
       <ExpenseContext.Provider value={{ expenses, setExpenses }}>
         <h1>React TRKR</h1>
         <DonutChart className='chart' />
@@ -28,7 +37,8 @@ function App() {
           type='button'
           className='btn btn-primary'
           data-bs-toggle='modal'
-          data-bs-target='#inputModal'>
+          data-bs-target='#inputModal'
+        >
           New Expense
         </button>
         <InputModal />
